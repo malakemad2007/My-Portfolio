@@ -2,935 +2,364 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Malak Emad | STEM Innovator & Global Change Maker</title>
+  <title>Malak Emad | Portfolio 2026</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Malak Emad's portfolio showcasing STEM achievements, leadership, and social impact.">
-  <meta name="author" content="Malak Emad">
+  <meta name="description" content="Malak Emad's portfolio - Student, Researcher, Founder, and Community Builder.">
   <link rel="icon" href="dear.future.luminary.logo.svg" type="image/png">
   <script src="https://kit.fontawesome.com/ce04bd97e3.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    /* ========== CSS Variables (Original Kit) ========== */
-    :root {
-      --bg-light: #f2f3f5;
-      --bg-alt: #ffffff;
-      --primary: #a78bfa;
-      --dark: #1e3a8a;
-      --accent: #facc15;
-      --dark-purple: #6d28d9;
-      
-      --font-heading: 'Montserrat', sans-serif;
-      --font-body: 'Poppins', sans-serif;
-      
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 20px;
-      --radius-xl: 50px;
-      
-      --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* ========== Base Styles ========== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg-light);
-      color: var(--dark);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      overflow-x: hidden;
-      cursor: none;
-    }
-
-    /* Custom Cursor (Subtle Glowing Light Yellow) */
-    .custom-cursor {
-      position: fixed;
-      width: 12px;
-      height: 12px;
-      background: var(--primary);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 10000;
-      transition: background 0.3s, box-shadow 0.3s, opacity 0.3s;
-      transform: translate(-50%, -50%);
-      top: var(--cursor-y, 0);
-      left: var(--cursor-x, 0);
-    }
-
-    body.cursor-hover .custom-cursor {
-      background: var(--accent);
-      box-shadow: 0 0 25px 12px rgba(250, 204, 21, 0.5);
-      width: 15px;
-      height: 15px;
-    }
-
-    .container {
-      width: min(1200px, 90%);
-      margin-inline: auto;
-    }
-
-    h1, h2, h3, h4, h5 {
-      font-family: var(--font-heading);
-      font-weight: 800;
-    }
-
-    /* ========== Navigation Bar (Old Style Restored) ========== */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 25px 0;
-      transition: var(--transition);
-    }
-
-    .navbar-container {
-      width: min(1200px, 90%);
-      margin-inline: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: transparent;
-      padding: 0 30px;
-      transition: var(--transition);
-    }
-
-    .navbar.scrolled {
-      padding: 15px 0;
-    }
-
-    .navbar.scrolled .navbar-container {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(15px);
-      padding: 12px 30px;
-      border-radius: var(--radius-xl);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      max-width: 90%;
-    }
-
-    .navbar-brand a {
-      text-decoration: none;
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--dark);
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 30px;
-    }
-
-    .nav-link {
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: var(--transition);
-    }
-
-    .nav-link i {
-      font-size: 1rem;
-      color: var(--primary);
-    }
-
-    .nav-link:hover, .nav-link.active {
-      color: var(--primary);
-    }
-
-    /* ========== Hero Section (Original Size & Layout) ========== */
-    .hero-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      margin-top: 20px;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--primary) 0%, #8b6ee0 100%);
-      border-radius: 80px 80px 0 0;
-      color: #fff;
-    }
-
-    .hero-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 60px;
-      z-index: 2;
-    }
-
-    .hero-content {
-      flex: 1.2;
-    }
-
-    .hero-title {
-      font-size: clamp(3.5rem, 8vw, 5.5rem);
-      line-height: 1.1;
-      margin-bottom: 25px;
-    }
-
-    .hero-subtitle {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 15px;
-      color: var(--accent);
-    }
-
-    .hero-description {
-      font-size: 1.15rem;
-      margin-bottom: 40px;
-      max-width: 550px;
-      opacity: 0.95;
-    }
-
-    .btn {
-      padding: 18px 40px;
-      border-radius: var(--radius-xl);
-      text-decoration: none;
-      font-weight: 700;
-      transition: var(--transition);
-      display: inline-block;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: var(--dark);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: #fff;
-      border: 2px solid #fff;
-      margin-left: 15px;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(250, 204, 21, 0.4);
-    }
-
-    .hero-image img {
-      max-width: 450px;
-      height: auto;
-      border-radius: var(--radius-lg);
-      filter: drop-shadow(0 20px 50px rgba(0,0,0,0.25));
-    }
-
-    /* ========== Section Base ========== */
-    .section {
-      padding: 140px 0;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .section-alt {
-      background: var(--bg-alt);
-    }
-
-    .section-header {
-      margin-bottom: 100px;
-    }
-
-    .section-title {
-      font-size: 4rem;
-      color: var(--dark);
-      position: relative;
-      display: inline-block;
-      font-weight: 800;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 0;
-      width: 100px;
-      height: 8px;
-      background: var(--accent);
-    }
-
-    /* ========== About Section (2026 Interactive Invention Style) ========== */
-    .about-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 100px;
-      align-items: center;
-    }
-
-    .about-main {
-      font-size: 1.6rem;
-      line-height: 1.8;
-      font-weight: 500;
-      color: var(--dark);
-    }
-
-    .about-main strong {
-      color: var(--primary);
-      font-weight: 800;
-      position: relative;
-      z-index: 1;
-    }
-
-    .about-main strong::after {
-      content: '';
-      position: absolute;
-      bottom: 5px;
-      left: 0;
-      width: 100%;
-      height: 12px;
-      background: rgba(167, 139, 250, 0.15);
-      z-index: -1;
-    }
-
-    .about-details {
-      font-size: 1.15rem;
-      color: #555;
-      line-height: 2;
-    }
-
-    /* ========== Experience Section (Card-Free Interactive Timeline) ========== */
-    .experience-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .experience-row {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 80px;
-      padding: 80px 0;
-      border-bottom: 1px solid rgba(30, 58, 138, 0.08);
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .experience-row:hover {
-      background: rgba(167, 139, 250, 0.02);
-      padding-left: 30px;
-    }
-
-    .experience-row::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 0;
-      background: var(--accent);
-      transition: var(--transition);
-    }
-
-    .experience-row:hover::before {
-      height: 100%;
-    }
-
-    .exp-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .exp-date {
-      font-weight: 800;
-      color: var(--primary);
-      font-size: 1.1rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .exp-org {
-      font-weight: 700;
-      color: var(--dark-purple);
-      font-size: 1.3rem;
-    }
-
-    .exp-content h3 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: var(--dark);
-    }
-
-    .exp-desc {
-      font-size: 1.2rem;
-      color: #444;
-      margin-bottom: 30px;
-      max-width: 850px;
-    }
-
-    /* ========== Projects Section (Modern Showcase) ========== */
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 150px;
-    }
-
-    .project-item {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 100px;
-      align-items: center;
-    }
-
-    .project-item:nth-child(even) {
-      direction: rtl;
-    }
-
-    .project-item:nth-child(even) .project-info {
-      direction: ltr;
-    }
-
-    .project-info h3 {
-      font-size: 3rem;
-      margin-bottom: 25px;
-      color: var(--dark);
-    }
-
-    .project-meta {
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 15px;
-      display: block;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .project-desc {
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 35px;
-      line-height: 1.8;
-    }
-
-    .project-visual {
-      width: 100%;
-      height: 450px;
-      background: #eee;
-      border-radius: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #999;
-      font-weight: 700;
-      font-size: 1.2rem;
-      border: 1px solid rgba(0,0,0,0.05);
-      transition: var(--transition);
-    }
-
-    .project-visual:hover {
-      transform: scale(1.02);
-      box-shadow: 0 30px 60px rgba(30, 58, 138, 0.1);
-    }
-
-    /* ========== Skills Section (Professional Blue Invention) ========== */
-    .skills-invention {
-      background: var(--dark);
-      padding: 100px;
-      border-radius: 60px;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .skills-invention h3 {
-      font-size: 3rem;
-      margin-bottom: 60px;
-      color: var(--accent);
-    }
-
-    .skills-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .skill-pill {
-      font-size: 1.8rem;
-      font-weight: 800;
-      padding: 15px 40px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 100px;
-      transition: var(--transition);
-      cursor: default;
-    }
-
-    .skill-pill:hover {
-      background: var(--accent);
-      color: var(--dark);
-      transform: translateY(-10px) rotate(2deg);
-      box-shadow: 0 20px 40px rgba(250, 204, 21, 0.3);
-    }
-
-    /* ========== Connect Bar (1000dreamsfund Style) ========== */
-    .connect-bar {
-      background: var(--accent);
-      padding: 25px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      z-index: 10;
-    }
-
-    .connect-content {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .connect-label {
-      font-family: var(--font-heading);
-      font-weight: 900;
-      font-size: 1.6rem;
-      color: var(--dark);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 25px;
-    }
-
-    .social-icon {
-      font-size: 2rem;
-      color: var(--dark);
-      transition: var(--transition);
-    }
-
-    .social-icon:hover {
-      color: var(--dark-purple);
-      transform: translateY(-8px);
-    }
-
-    /* ========== Footer (Original Restored) ========== */
-    .footer {
-      background: linear-gradient(135deg, var(--primary) 0%, #8b6ee0 100%);
-      color: #fff;
-      padding: 120px 0 50px;
-    }
-
-    .footer-main {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 100px;
-      margin-bottom: 80px;
-    }
-
-    .footer-name {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 25px;
-    }
-
-    .footer-tagline {
-      font-size: 1.3rem;
-      opacity: 0.95;
-      max-width: 400px;
-    }
-
-    .footer-form-frame {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 50px;
-      border-radius: 40px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-      margin-bottom: 25px;
-    }
-
-    .footer-form-group input,
-    .footer-form-group textarea {
-      width: 100%;
-      padding: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-      font-family: var(--font-body);
-      font-size: 1rem;
-    }
-
-    .footer-form-group.full {
-      grid-column: span 2;
-    }
-
-    .footer-submit-btn {
-      padding: 18px 50px;
-      background: var(--accent);
-      color: var(--dark);
-      border: none;
-      border-radius: 100px;
-      font-weight: 800;
-      cursor: pointer;
-      font-size: 1.1rem;
-      transition: var(--transition);
-    }
-
-    .footer-submit-btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    }
-
-    .footer-bottom {
-      padding-top: 50px;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      display: flex;
-      justify-content: space-between;
-      font-weight: 700;
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      .hero-container, .about-layout, .experience-row, .project-item, .footer-main {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-      .project-item:nth-child(even) {
-        direction: ltr;
-      }
-      .skills-invention {
-        padding: 50px 30px;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <div class="custom-cursor"></div>
 
-  <!-- Navigation -->
-  <nav id="navbar" class="navbar">
-    <div class="navbar-container">
-      <div class="navbar-brand"><a href="#home">Malak Emad</a></div>
-      <ul class="nav-links">
-        <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
-        <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a></li>
-        <li><a href="#projects" class="nav-link"><i class="fas fa-lightbulb"></i> Projects</a></li>
-        <li><a href="#skills" class="nav-link"><i class="fas fa-bolt"></i> Skills</a></li>
-      </ul>
-    </div>
+  <nav class="navbar">
+    <div class="navbar-brand"><a href="#home">Malak Emad</a></div>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link">01 Home</a></li>
+      <li><a href="#about" class="nav-link">02 About</a></li>
+      <li><a href="#experience" class="nav-link">03 Experience</a></li>
+      <li><a href="#projects" class="nav-link">04 Projects</a></li>
+      <li><a href="#skills" class="nav-link">05 Skills</a></li>
+      <li><a href="#awards" class="nav-link">06 Awards</a></li>
+      <li><a href="#certifications" class="nav-link">07 Certs</a></li>
+      <li><a href="#leadership" class="nav-link">08 Lead</a></li>
+      <li><a href="#research" class="nav-link">09 Research</a></li>
+      <li><a href="#contact" class="nav-link">10 Contact</a></li>
+      <li><a href="#why-ai" class="nav-link">11 Why AI</a></li>
+      <li><a href="#why-alamein" class="nav-link">12 Why Alamein</a></li>
+    </ul>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero-section">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <h1 class="hero-title">Malak Emad</h1>
-        <p class="hero-subtitle">Founder of Dear Future Luminary</p>
-        <p class="hero-description">STEM • Leadership • Digital Creation. Building platforms that turn ambition into impact through intentional growth and community-driven solutions.</p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">Explore Impact</a>
-          <a href="#about" class="btn btn-secondary">My Story</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="personal-pic.png" alt="Malak Emad">
-      </div>
-    </div>
-  </section>
-
   <main>
-    <!-- About Section -->
-    <section id="about" class="section section-alt">
+    <!-- 01_Home -->
+    <section id="home" class="hero-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Invention Story</h2>
-        </div>
-        <div class="about-layout">
-          <div class="about-main">
-            <strong>I don't just learn—I build.</strong><br><br>
-            I've never been interested in doing things the traditional way. I like understanding how things work, breaking them down, and rebuilding them better.
+        <span class="section-number">01</span>
+        <div class="hero-grid">
+          <div class="hero-content" data-reveal>
+            <h1 class="hero-title">Building<br><span>Opportunities.</span></h1>
+            <p class="hero-description">Building opportunities. Leading communities. Creating impact. Hi, I'm Malak Emad — a student, researcher, founder, and community builder passionate about technology, leadership, and helping young people discover opportunities that can change their lives.</p>
+            <div class="hero-cta">
+              <a href="#about" class="btn btn-primary">Discover More</a>
+            </div>
           </div>
-          <div class="about-details">
-            From leading student communities to creating Dear Future Luminary, everything I've done comes from the same place: I see a gap, and I try to fill it. My work sits at the intersection of STEM, leadership, and creativity. I'm not here to follow a path. I'm here to create one.
+          <div class="hero-image-container" data-reveal>
+            <img src="personal-pic.png" alt="Malak Emad">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
+    <!-- 02_About -->
+    <section id="about">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Experience</h2>
+        <span class="section-number">02</span>
+        <h2 class="section-title" data-reveal>Curious. <span>Luminary.</span><br>Community-driven.</h2>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Who I Am</div>
+          <div class="row-body">
+            <p>I am a pre-college student from Egypt with a deep interest in technology, innovation, and solving real-world problems. I enjoy exploring different fields, asking questions, and turning ideas into projects. Whether I'm organizing an event, building a website, conducting research, managing a team, or mentoring students, I always try to bring energy, creativity, and purpose into everything I do.</p>
+            <p style="margin-top: 20px;"><strong>Success becomes more meaningful when you help others succeed too.</strong></p>
+          </div>
         </div>
-        <div class="experience-stack">
-          
-          <div class="experience-row">
-            <div class="exp-meta">
-              <span class="exp-date">JAN 2026 - PRESENT</span>
-              <span class="exp-org">UNICEF</span>
-            </div>
-            <div class="exp-content">
-              <h3>U-Reporter (Youth Advocate)</h3>
-              <p class="exp-desc">Participating in youth-led data collection and surveys addressing education, climate, and social issues. Contributing youth perspectives to UNICEF-supported advocacy and policy insights. Engaging with a global network of young people to amplify community-driven solutions.</p>
-            </div>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">My Philosophy</div>
+          <div class="row-body">
+            <p>One thing that defines me is that I rarely give up. When I face challenges, I see them as puzzles waiting to be solved. Beyond academics, I love connecting with people from different cultures, sharing opportunities, and creating spaces where students can learn from one another. I believe leadership is not about being the loudest person in the room. It's about making sure everyone else's voice is heard too.</p>
           </div>
-
-          <div class="experience-row">
-            <div class="exp-meta">
-              <span class="exp-date">MAY 2024 - PRESENT</span>
-              <span class="exp-org">Dear Future Luminary</span>
-            </div>
-            <div class="exp-content">
-              <h3>Founder & Program Director</h3>
-              <p class="exp-desc">Founded a youth-led initiative dedicated to guiding high school students toward scholarships, global programs, and intentional personal growth. Designed the vision, structure, and long-term roadmap of the initiative, translating lived experience navigating competitive opportunities into accessible guidance. Currently developing a professional website from scratch to centralize summer programs, STEM clubs, MUNs, resources, and growth tools. Led training sessions and mentorship-style discussions on summer programs, sustainability, and leadership, empowering students to make informed academic decisions. Built a mission-driven personal brand centered on impact, clarity, and community service.</p>
-            </div>
-          </div>
-
-          <div class="experience-row">
-            <div class="exp-meta">
-              <span class="exp-date">FEB 2024 - PRESENT</span>
-              <span class="exp-org">Kode With Klossy</span>
-            </div>
-            <div class="exp-content">
-              <h3>Project Manager</h3>
-              <p class="exp-desc">Led the planning and execution of web-based projects within a structured, intensive coding program. Coordinated task distribution, timelines, and team communication for collaborative, project-based learning. Managed project milestones while contributing to front-end development using HTML, CSS, and JavaScript. Ensured project delivery aligned with user needs and program objectives.</p>
-            </div>
-          </div>
-
-          <div class="experience-row">
-            <div class="exp-meta">
-              <span class="exp-date">FEB 2024 - PRESENT</span>
-              <span class="exp-org">International Organization of Youth</span>
-            </div>
-            <div class="exp-content">
-              <h3>Youth Advocate</h3>
-              <p class="exp-desc">Participated in a global youth advocacy program focused on climate action, policy, and sustainability. Designed and contributed to awareness campaigns that reached over 1,000 online viewers. Collaborated with international youth leaders, strengthening a global perspective on advocacy and impact. Integrated advocacy insights into leadership roles across education, STEM, and entrepreneurship initiatives.</p>
-            </div>
-          </div>
-
-          <div class="experience-row">
-            <div class="exp-meta">
-              <span class="exp-date">2024 - PRESENT</span>
-              <span class="exp-org">Mohandes El Math</span>
-            </div>
-            <div class="exp-content">
-              <h3>Head of Operations & Platform Manager</h3>
-              <p class="exp-desc">Founding member responsible for taking the platform from idea to live operation (0→1). Led coordination with external development teams/vendors to select, launch, and operate the educational platform. Fully manage the Admin Panel, including student onboarding, subscriptions, technical issue resolution, and daily platform operations. Built and managed the WhatsApp customer support system end-to-end: Designed structured quick replies and response flows; Organized lead handling, support tickets, and follow-ups. Recruited, trained, and supervised a WhatsApp Support Team, ensuring consistent communication and service quality. Optimized Customer Experience (CX) by reducing response time and streamlining communication with students and parents. Played a key role in operational scalability by offloading day-to-day operations from the instructor and enabling sustainable growth.</p>
-            </div>
-          </div>
-
-          <div class="experience-row">
-            <div class="exp-meta">
-              <span class="exp-date">FEB 2023 - PRESENT</span>
-              <span class="exp-org">NY Academy of Sciences</span>
-            </div>
-            <div class="exp-content">
-              <h3>Project Manager</h3>
-              <p class="exp-desc">Managed collaborative research projects within international youth teams. Coordinated timelines, deliverables, and team communication. Developed leadership and organizational skills in a research-driven environment.</p>
-            </div>
-          </div>
-
-          <div class="experience-row">
-            <div class="exp-meta">
-              <span class="exp-date">JAN 2023 - PRESENT</span>
-              <span class="exp-org">Junior Academy</span>
-            </div>
-            <div class="exp-content">
-              <h3>Researcher</h3>
-              <p class="exp-desc">Conducted independent, team-based research under mentorship of international scientists and subject-matter experts. Developed evidence-based insights addressing challenges in climate change and sustainability. Collaborated with a global cohort of students from 100+ countries, contributing to interdisciplinary problem-solving. Presented research outcomes and recommendations to a global youth and expert network, emphasizing real-world applicability.</p>
-            </div>
-          </div>
-
-          <div class="experience-row">
-            <div class="exp-meta">
-              <span class="exp-date">JAN 2024 - NOV 2025</span>
-              <span class="exp-org">Connect Rise</span>
-            </div>
-            <div class="exp-content">
-              <h3>Mentor</h3>
-              <p class="exp-desc">Served as a mentor delivering structured guidance sessions on summer program applications and personal profile development for high school students. Led live sessions on Google Meet with 50+ attendees per session, focusing on building competitive student profiles, identifying global opportunities, and strategically approaching scholarships and international programs. Sessions were recorded and later published on YouTube, reaching 500+ viewers, significantly expanding access to mentorship content beyond live participation. Provided clear, step-by-step frameworks to help students improve extracurricular positioning and navigate application processes with confidence and direction.</p>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section section-alt">
+    <!-- 03_Experience -->
+    <section id="experience">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Projects</h2>
+        <span class="section-number">03</span>
+        <h2 class="section-title" data-reveal>Making Things <span>Happen.</span></h2>
+        
+        <div class="content-row" data-reveal>
+          <div class="row-meta">UNICEF</div>
+          <div class="row-body">
+            <h3>Youth Advocate</h3>
+            <p>January 2026 – Present. Contributing youth perspectives to conversations around education, climate action, and social development. Through surveys and discussions, I help ensure young people's voices are represented in shaping the future.</p>
+          </div>
         </div>
-        <div class="projects-grid">
-          
-          <div class="project-item">
-            <div class="project-info">
-              <span class="project-meta">Associated with Dear Future Luminary</span>
-              <h3>Impact Platform</h3>
-              <p class="project-desc">Founded a youth-led initiative focused on democratizing access to global opportunities for high school students, especially from underrepresented backgrounds. Designed a structured platform highlighting STEM clubs, international summer programs, scholarships, competitions, and skill-building resources. Developed the project vision, branding, content strategy, and roadmap independently. Led research and curation of fully funded and merit-based opportunities, simplifying complex application processes for students.</p>
-            </div>
-            <div class="project-visual">Project Visual</div>
-          </div>
 
-          <div class="project-item">
-            <div class="project-info">
-              <span class="project-meta">Associated with Connect Rise</span>
-              <h3>Mentorship Series</h3>
-              <p class="project-desc">Designed and delivered a structured mentorship series focused on guiding students through summer program applications and personal profile development. Led live sessions on Google Meet with 50+ attendees per session, focusing on building competitive student profiles, identifying global opportunities, and strategically approaching scholarships and international programs. Sessions were recorded and later published on YouTube, reaching 500+ viewers.</p>
-            </div>
-            <div class="project-visual">Project Visual</div>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Dear Future Luminary</div>
+          <div class="row-body">
+            <h3>Founder & Program Director</h3>
+            <p>May 2024 – Present. Built a growing initiative that helps students discover opportunities, develop profiles, and navigate academic journeys. Every part is designed to make opportunities more accessible and less overwhelming.</p>
           </div>
+        </div>
 
-          <div class="project-item">
-            <div class="project-info">
-              <span class="project-meta">Associated with Kode With Klossy</span>
-              <h3>Culture Odyssey</h3>
-              <p class="project-desc">Collaborated with a global team to build a web-based project focusing on user experience and storytelling to highlight cultural exploration. Strengthening technical communication and problem-solving skills in a team-based environment.</p>
-            </div>
-            <div class="project-visual">Project Visual</div>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Kode With Klossy</div>
+          <div class="row-body">
+            <h3>Project Manager</h3>
+            <p>February 2024 – Present. Managing collaborative web-development projects, strengthening technical and leadership skills while transforming ideas into functional digital experiences.</p>
           </div>
+        </div>
 
-          <div class="project-item">
-            <div class="project-info">
-              <span class="project-meta">Associated with AFS Intercultural</span>
-              <h3>Crop Growth Control</h3>
-              <p class="project-desc">Designed a sensor-based system to monitor air temperature and soil humidity, automating irrigation to reduce water waste. Scalable solution for water conservation in climate-vulnerable regions.</p>
-            </div>
-            <div class="project-visual">Project Visual</div>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Mohandes El Math</div>
+          <div class="row-body">
+            <h3>Head of Operations</h3>
+            <p>2024 – Present. Transformed an educational platform into a fully operational system. Managed student onboarding, workflow optimization, and team supervision. Taught me that building platforms is about people and systems.</p>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
+    <!-- 04_Projects -->
+    <section id="projects">
       <div class="container">
-        <div class="skills-invention">
-          <h3>Mastered Skills</h3>
-          <div class="skills-pills">
-            <div class="skill-pill">Web Development</div>
-            <div class="skill-pill">Python</div>
-            <div class="skill-pill">Project Management</div>
-            <div class="skill-pill">Strategic Planning</div>
-            <div class="skill-pill">Youth Advocacy</div>
-            <div class="skill-pill">Digital Branding</div>
-            <div class="skill-pill">Data Analysis</div>
-            <div class="skill-pill">Mentorship</div>
-            <div class="skill-pill">Public Speaking</div>
-            <div class="skill-pill">UX/UI Design</div>
-            <div class="skill-pill">Executive Operations</div>
-            <div class="skill-pill">Climate Research</div>
+        <span class="section-number">04</span>
+        <h2 class="section-title" data-reveal>Turning Ideas <span>Into Impact.</span></h2>
+        
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Impact Platform</div>
+          <div class="row-body">
+            <h3>Dear Future Luminary</h3>
+            <p>Created to help students access hidden opportunities. Brings together scholarships, STEM clubs, competitions, and resources. Helping students realize dreams are bigger than circumstances.</p>
+          </div>
+        </div>
+
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Sustainability</div>
+          <div class="row-body">
+            <h3>Crop Growth Control System</h3>
+            <p>Developed through AFS Intercultural Programs. Monitored temperature and soil humidity to automate irrigation, reducing water consumption and improving efficiency.</p>
+          </div>
+        </div>
+
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Web Experience</div>
+          <div class="row-body">
+            <h3>Culture Odyssey</h3>
+            <p>Explored cultural storytelling through web design and interactive experiences, combining creativity and technology.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05_Skills -->
+    <section id="skills">
+      <div class="container">
+        <span class="section-number">05</span>
+        <h2 class="section-title" data-reveal>My <span>Toolkit.</span></h2>
+        <div class="skills-container" data-reveal>
+          <div class="skill-tag">HTML/CSS</div>
+          <div class="skill-tag">JAVASCRIPT</div>
+          <div class="skill-tag">UI/UX</div>
+          <div class="skill-tag">RESEARCH</div>
+          <div class="skill-tag">LEADERSHIP</div>
+          <div class="skill-tag">STRATEGY</div>
+          <div class="skill-tag">PROJECT MGMT</div>
+          <div class="skill-tag">MENTORSHIP</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06_Awards -->
+    <section id="awards">
+      <div class="container">
+        <span class="section-number">06</span>
+        <h2 class="section-title" data-reveal>Awards & <span>Recognition.</span></h2>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Mathematics</div>
+          <div class="row-body">
+            <h3>International Youth Math Challenge</h3>
+            <p>Recognition for excellence in mathematical problem-solving on a global platform (2024).</p>
+          </div>
+        </div>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Leadership</div>
+          <div class="row-body">
+            <h3>Leadership Excellence Award</h3>
+            <p>Recognized for outstanding contributions to community impact initiatives (2024).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07_Certifications -->
+    <section id="certifications">
+      <div class="container">
+        <span class="section-number">07</span>
+        <h2 class="section-title" data-reveal>Professional <span>Growth.</span></h2>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Mentorship</div>
+          <div class="row-body">
+            <h3>Youth Mentorship Certification</h3>
+            <p>Specialized training in youth development and supporting others' growth (2024).</p>
+          </div>
+        </div>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Tech</div>
+          <div class="row-body">
+            <h3>Digital Literacy Program</h3>
+            <p>Advanced digital literacy and web development programs from leading institutions (2024).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08_Leadership -->
+    <section id="leadership">
+      <div class="container">
+        <span class="section-number">08</span>
+        <h2 class="section-title" data-reveal>Leading <span>Communities.</span></h2>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Impact Stats</div>
+          <div class="row-body" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;">
+            <div>
+              <h3 style="font-size: 3rem; color: var(--primary);">500+</h3>
+              <p>Students Reached</p>
+            </div>
+            <div>
+              <h3 style="font-size: 3rem; color: var(--primary);">50+</h3>
+              <p>Opportunities Curated</p>
+            </div>
+            <div>
+              <h3 style="font-size: 3rem; color: var(--primary);">15+</h3>
+              <p>Programs Explored</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Advocacy</div>
+          <div class="row-body">
+            <h3>International Organization of Youth</h3>
+            <p>Youth Advocate since Feb 2024. Contributing to sustainability and climate action initiatives, reinforcing commitment to social impact.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09_Research -->
+    <section id="research">
+      <div class="container">
+        <span class="section-number">09</span>
+        <h2 class="section-title" data-reveal>Global <span>Research.</span></h2>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">NY Academy of Sciences</div>
+          <div class="row-body">
+            <h3>Project Manager</h3>
+            <p>Managing international research teams, coordinating diverse perspectives, and maintaining progress toward shared goals since Feb 2023.</p>
+          </div>
+        </div>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">The Junior Academy</div>
+          <div class="row-body">
+            <h3>Researcher</h3>
+            <p>Collaborating with students from 100+ countries on sustainability and climate challenges through evidence-based problem solving.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10_Contact -->
+    <section id="contact">
+      <div class="container">
+        <span class="section-number">10</span>
+        <h2 class="section-title" data-reveal>Let's <span>Connect.</span></h2>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">Reach Out</div>
+          <div class="row-body">
+            <p>If you'd like to learn more about my work or simply connect, I'd be happy to hear from you.</p>
+            <p style="font-size: 2rem; font-weight: 800; margin: 20px 0;">malak@example.com</p>
+            <div class="social-links" style="display: flex; gap: 20px; font-size: 1.5rem;">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11_Why_AI -->
+    <section id="why-ai">
+      <div class="container">
+        <span class="section-number">11</span>
+        <h2 class="section-title" data-reveal>Why <span>AI?</span></h2>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">The Vision</div>
+          <div class="row-body">
+            <p>AI combines everything I love: Problem-solving, Creativity, Technology, Innovation, and Impact. It is already shaping healthcare, education, and sustainability. What excites me most is using these systems to solve meaningful problems and being a builder of that future.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12_Why_Alamein -->
+    <section id="why-alamein">
+      <div class="container">
+        <span class="section-number">12</span>
+        <h2 class="section-title" data-reveal>Why <span>Alamein?</span></h2>
+        <div class="content-row" data-reveal>
+          <div class="row-meta">The Choice</div>
+          <div class="row-body">
+            <p>I was looking for a place to grow—where I could collaborate, conduct research, and challenge myself. Alamein International University stands out for its academic excellence and global exposure. I see it as a platform for leadership and lifelong learning, where I can transform ideas into impactful projects.</p>
+            <p style="margin-top: 20px; font-weight: 800; color: var(--primary);">Still building. And that's exactly where I want to be.</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Connect Bar -->
-  <div class="connect-bar">
-    <div class="connect-content">
-      <span class="connect-label">Connect:</span>
-      <div class="social-icons">
-        <a href="https://www.youtube.com/@malak_luminary" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.facebook.com/malak.emad.116431" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/malak_luminary" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="mailto:malak.elsalmawi@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-        <a href="https://x.com/loka_luminary" class="social-icon" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/loka-luminary/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer">
+  <footer style="padding: 60px 0; text-align: center; border-top: var(--border-thin);">
     <div class="container">
-      <div class="footer-main">
-        <div>
-          <div class="footer-name">Malak Emad</div>
-          <p class="footer-tagline">STEM Innovator. Global Change Maker. Youth Empowerment</p>
-        </div>
-        <div class="footer-form-frame">
-          <form id="contact-form">
-            <div class="form-row">
-              <div class="footer-form-group"><input type="text" placeholder="Name" required></div>
-              <div class="footer-form-group"><input type="email" placeholder="Email" required></div>
-            </div>
-            <div class="footer-form-group full"><textarea placeholder="Message" required></textarea></div>
-            <button type="submit" class="footer-submit-btn">Send Message</button>
-          </form>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Malak Emad</p>
-        <p>Developed by Malak Emad</p>
-      </div>
+      <p>&copy; 2026 Malak Emad. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
     // Custom Cursor
+    const cursor = document.querySelector('.custom-cursor');
     document.addEventListener('mousemove', (e) => {
-      document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
-      document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
+      cursor.style.setProperty('--cursor-x', e.clientX + 'px');
+      cursor.style.setProperty('--cursor-y', e.clientY + 'px');
     });
 
-    document.addEventListener('mouseover', (e) => {
-      if (['A', 'BUTTON', 'INPUT', 'TEXTAREA', 'I'].includes(e.target.tagName)) {
-        document.body.classList.add('cursor-hover');
-      }
-    });
-    document.addEventListener('mouseout', (e) => {
-      if (['A', 'BUTTON', 'INPUT', 'TEXTAREA', 'I'].includes(e.target.tagName)) {
-        document.body.classList.remove('cursor-hover');
-      }
-    });
-
-    // Scroll Reveal
+    // Reveal on scroll
+    const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
       });
-    }, { threshold: 0.1 });
+    }, observerOptions);
 
-    document.querySelectorAll('.section').forEach(s => observer.observe(s));
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
 
-    // Navbar Scroll
+    // Navbar scroll
     window.addEventListener('scroll', () => {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > 50) navbar.classList.add('scrolled');
-      else navbar.classList.remove('scrolled');
+      const nav = document.querySelector('.navbar');
+      if (window.scrollY > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
     });
 
-    // Contact Form
-    document.getElementById('contact-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Message Sent!');
-      e.target.reset();
+    // Active nav link
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
     });
   </script>
 </body>
