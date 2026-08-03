@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malak Emad | Portfolio 2026</title>
+  <meta name="description" content="Malak Emad - STEM Innovator, Founder, and Community Builder. Exploring AI, Leadership, and Social Impact.">
+  <meta name="author" content="Malak Emad">
+  <link rel="icon" href="dear.future.luminary.logo.svg" type="image/png">
+  <script src="https://kit.fontawesome.com/ce04bd97e3.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ========== CSS Variables (Malak's Color Kit) ========== */
+    :root {
+      --bg-light: #f2f3f5;
+      --bg-alt: #ffffff;
+      --primary: #a78bfa;
+      --dark: #1e3a8a;
+      --accent: #facc15;
+      --dark-purple: #6d28d9;
+      --text-muted: #666666;
+      
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Poppins', sans-serif;
+      
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 50px;
+      
+      --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    /* ========== Base Styles ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg-light);
+      color: var(--dark);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* Custom Cursor */
+    .custom-cursor {
+      position: fixed;
+      width: 12px;
+      height: 12px;
+      background: var(--primary);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10000;
+      transition: background 0.3s, box-shadow 0.3s, opacity 0.3s;
+      transform: translate(-50%, -50%);
+      top: var(--cursor-y, 0);
+      left: var(--cursor-x, 0);
+    }
+
+    body.cursor-hover .custom-cursor {
+      background: var(--accent);
+      box-shadow: 0 0 25px 12px rgba(250, 204, 21, 0.5);
+      width: 15px;
+      height: 15px;
+    }
+
+    .container {
+      width: min(1200px, 90%);
+      margin-inline: auto;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-heading);
+      font-weight: 800;
+    }
+
+    /* ========== Navigation Bar ========== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 25px 0;
+      transition: var(--transition);
+    }
+
+    .navbar-container {
+      width: min(1200px, 90%);
+      margin-inline: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      padding: 0 30px;
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      padding: 15px 0;
+    }
+
+    .navbar.scrolled .navbar-container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      padding: 12px 30px;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      max-width: 90%;
+    }
+
+    .navbar-brand a {
+      text-decoration: none;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-link i {
+      font-size: 1rem;
+      color: var(--primary);
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* ========== Section Base ========== */
+    .section {
+      padding: 140px 0;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-alt {
+      background: var(--bg-alt);
+    }
+
+    .section-header {
+      margin-bottom: 100px;
+    }
+
+    .section-title {
+      font-size: 4rem;
+      color: var(--dark);
+      position: relative;
+      display: inline-block;
+      font-weight: 800;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 100px;
+      height: 8px;
+      background: var(--accent);
+    }
+
+    .section-subtitle {
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      margin-top: 30px;
+      max-width: 700px;
+    }
+
+    /* ========== Hero Section (01_Home) ========== */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-top: 20px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--primary) 0%, #8b6ee0 100%);
+      border-radius: 80px 80px 0 0;
+      color: #fff;
+    }
+
+    .hero-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 60px;
+      z-index: 2;
+    }
+
+    .hero-content {
+      flex: 1.2;
+    }
+
+    .hero-title {
+      font-size: clamp(3.5rem, 8vw, 5.5rem);
+      line-height: 1.1;
+      margin-bottom: 25px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--accent);
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      margin-bottom: 40px;
+      max-width: 550px;
+      opacity: 0.95;
+    }
+
+    .btn {
+      padding: 18px 40px;
+      border-radius: var(--radius-xl);
+      text-decoration: none;
+      font-weight: 700;
+      transition: var(--transition-fast);
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-right: 15px;
+      margin-bottom: 15px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--dark);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(250, 204, 21, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .hero-image img {
+      max-width: 450px;
+      height: auto;
+      border-radius: var(--radius-lg);
+      filter: drop-shadow(0 20px 50px rgba(0,0,0,0.25));
+    }
+
+    /* ========== About Section (02_About) ========== */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .about-main {
+      font-size: 1.6rem;
+      line-height: 1.8;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .about-main strong {
+      color: var(--primary);
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-main strong::after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      height: 12px;
+      background: rgba(167, 139, 250, 0.15);
+      z-index: -1;
+    }
+
+    .about-details {
+      font-size: 1.15rem;
+      color: #555;
+      line-height: 2;
+    }
+
+    .quick-facts {
+      background: rgba(167, 139, 250, 0.05);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--primary);
+    }
+
+    .fact-item {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      color: var(--dark);
+    }
+
+    .fact-item strong {
+      color: var(--primary);
+    }
+
+    /* ========== Experience Section (03_Experience) ========== */
+    .experience-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .experience-row {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 80px;
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(30, 58, 138, 0.08);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .experience-row:hover {
+      background: rgba(167, 139, 250, 0.02);
+      padding-left: 30px;
+    }
+
+    .experience-row::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 0;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+
+    .experience-row:hover::before {
+      height: 100%;
+    }
+
+    .exp-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .exp-date {
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 1.1rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .exp-org {
+      font-weight: 700;
+      color: var(--dark-purple);
+      font-size: 1.3rem;
+    }
+
+    .exp-content h3 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .exp-desc {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 30px;
+      max-width: 850px;
+    }
+
+    /* ========== Projects Section (04_Projects) ========== */
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 150px;
+    }
+
+    .project-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .project-item:nth-child(even) {
+      direction: rtl;
+    }
+
+    .project-item:nth-child(even) .project-info {
+      direction: ltr;
+    }
+
+    .project-info h3 {
+      font-size: 3rem;
+      margin-bottom: 25px;
+      color: var(--dark);
+    }
+
+    .project-meta {
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 15px;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .project-desc {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 35px;
+      line-height: 1.8;
+    }
+
+    .project-visual {
+      width: 100%;
+      height: 450px;
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(139, 110, 224, 0.1) 100%);
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border: 1px solid rgba(167, 139, 250, 0.2);
+      transition: var(--transition);
+    }
+
+    .project-visual:hover {
+      transform: scale(1.02);
+      box-shadow: 0 30px 60px rgba(30, 58, 138, 0.1);
+    }
+
+    /* ========== Skills Section (05_Skills) ========== */
+    .skills-invention {
+      background: var(--dark);
+      padding: 100px;
+      border-radius: 60px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skills-invention h3 {
+      font-size: 3rem;
+      margin-bottom: 60px;
+      color: var(--accent);
+    }
+
+    .skills-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .skill-pill {
+      font-size: 1.8rem;
+      font-weight: 800;
+      padding: 15px 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 100px;
+      transition: var(--transition);
+      cursor: default;
+    }
+
+    .skill-pill:hover {
+      background: var(--accent);
+      color: var(--dark);
+      transform: translateY(-10px) rotate(2deg);
+      box-shadow: 0 20px 40px rgba(250, 204, 21, 0.3);
+    }
+
+    /* ========== Awards Section (06_Awards) ========== */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 60px;
+    }
+
+    .award-item {
+      padding: 40px;
+      background: rgba(167, 139, 250, 0.05);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--accent);
+      transition: var(--transition-fast);
+    }
+
+    .award-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(167, 139, 250, 0.15);
+    }
+
+    .award-item h3 {
+      font-size: 1.6rem;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .award-year {
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .award-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ========== Certifications Section (07_Certifications) ========== */
+    .certifications-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .cert-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 30px;
+      align-items: start;
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(167, 139, 250, 0.1);
+    }
+
+    .cert-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark-purple) 100%);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 2rem;
+    }
+
+    .cert-content h3 {
+      font-size: 1.5rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .cert-issuer {
+      font-size: 0.95rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .cert-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ========== Leadership Section (08_Leadership) ========== */
+    .leadership-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .leadership-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 60px;
+      align-items: start;
+      padding: 40px;
+      background: rgba(167, 139, 250, 0.03);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--primary);
+      transition: var(--transition-fast);
+    }
+
+    .leadership-item:hover {
+      background: rgba(167, 139, 250, 0.08);
+      transform: translateX(10px);
+    }
+
+    .leadership-role {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .leadership-org {
+      font-size: 1rem;
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .leadership-desc {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* ========== Research Section (09_Research) ========== */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 50px;
+    }
+
+    .research-item {
+      padding: 50px 40px;
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.05) 0%, rgba(139, 110, 224, 0.05) 100%);
+      border-radius: var(--radius-lg);
+      border-top: 3px solid var(--accent);
+      transition: var(--transition-fast);
+    }
+
+    .research-item:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 30px 60px rgba(167, 139, 250, 0.2);
+    }
+
+    .research-item h3 {
+      font-size: 1.5rem;
+      color: var(--dark);
+      margin-bottom: 15px;
+    }
+
+    .research-focus {
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .research-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ========== Why AI Section (11_Why_AI) ========== */
+    .why-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .why-content h3 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: var(--dark);
+    }
+
+    .why-text {
+      font-size: 1.2rem;
+      color: #555;
+      line-height: 1.9;
+      margin-bottom: 25px;
+    }
+
+    .why-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .why-list li {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--dark);
+      padding-left: 40px;
+      position: relative;
+    }
+
+    .why-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .why-visual {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark-purple) 100%);
+      padding: 80px 60px;
+      border-radius: 40px;
+      color: #fff;
+      text-align: center;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .why-visual h4 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .why-visual p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* ========== Contact Section (10_Contact) ========== */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 15px 20px;
+      border: 2px solid rgba(167, 139, 250, 0.2);
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: var(--transition-fast);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .contact-method {
+      display: flex;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(167, 139, 250, 0.1);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .contact-method h4 {
+      font-size: 1.3rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .contact-method p {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .social-link {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    .social-link:hover {
+      background: var(--accent);
+      color: var(--dark);
+      transform: translateY(-5px);
+    }
+
+    /* ========== Footer ========== */
+    .footer {
+      background: var(--dark);
+      color: #fff;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    /* ========== Responsive Design ========== */
+    @media (max-width: 768px) {
+      .hero-container {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .about-layout,
+      .project-item,
+      .why-section,
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .project-item:nth-child(even) {
+        direction: ltr;
+      }
+
+      .experience-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: 0.8rem;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+      .skills-invention {
+        padding: 60px 30px;
+      }
+
+      .skill-pill {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-cursor"></div>
+
+  <!-- ========== Navigation Bar ========== -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="#home">Malak</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="#projects" class="nav-link"><i class="fas fa-folder"></i> Projects</a></li>
+        <li><a href="#skills" class="nav-link"><i class="fas fa-star"></i> Skills</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ========== 01_Home Section ========== -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="hero-container">
+          <div class="hero-content">
+            <h1 class="hero-title">Building opportunities. Leading communities. Creating impact.</h1>
+            <p class="hero-subtitle">Hi, I'm Malak Emad</p>
+            <p class="hero-description">A student, researcher, founder, and community builder passionate about technology, leadership, and helping young people discover opportunities that can change their lives.</p>
+            <p class="hero-description" style="font-weight: 700; color: var(--accent);">Success becomes more meaningful when you help others succeed too.</p>
+            <div>
+              <a href="#about" class="btn btn-primary">Explore My Work</a>
+              <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="personal-pic.png" alt="Malak Emad">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 02_About Section ========== -->
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About</h2>
+          <p class="section-subtitle">If I had to describe myself in a few words, I would say: Curious. Luminary and Community-driven.</p>
+        </div>
+
+        <div class="about-layout">
+          <div>
+            <p class="about-main">I am a pre-college student from Egypt with a deep interest in technology, innovation, and solving real-world problems. I enjoy exploring different fields, asking questions, and turning ideas into projects.</p>
+            <p class="about-main" style="margin-top: 30px;">Whether I'm organizing an event, building a website, conducting research, managing a team, or mentoring students, I always try to bring energy, creativity, and purpose into everything I do.</p>
+            <p class="about-main" style="margin-top: 30px;"><strong>One thing that defines me is that I rarely give up.</strong> When I face challenges, I see them as puzzles waiting to be solved.</p>
+          </div>
+          <div class="quick-facts">
+            <h3 style="font-size: 1.8rem; margin-bottom: 30px; color: var(--dark);">Quick Facts</h3>
+            <div class="fact-item"><strong>Location:</strong> Egypt</div>
+            <div class="fact-item"><strong>Interests:</strong> Artificial Intelligence, Technology, Education</div>
+            <div class="fact-item"><strong>Founder:</strong> Dear Future Luminary</div>
+            <div class="fact-item"><strong>Role:</strong> Research Participant, Project Manager</div>
+            <div class="fact-item"><strong>Passion:</strong> Youth Advocacy & Social Impact</div>
+            <div class="fact-item"><strong>Vision:</strong> Future AI Engineering Student</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 03_Experience Section ========== -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Experience</h2>
+          <p class="section-subtitle">Building Communities, Creating Opportunities, and Making Things Happen</p>
+        </div>
+
+        <div class="experience-stack">
+          <div class="experience-row">
+            <div class="exp-meta">
+              <div class="exp-date">Jan 2026 – Present</div>
+              <div class="exp-org">UNICEF</div>
+            </div>
+            <div class="exp-content">
+              <h3>U-Reporter & Youth Advocate</h3>
+              <p class="exp-desc">As a U-Reporter, I contribute youth perspectives to conversations around education, climate action, and social development. Through surveys, discussions, and community engagement, I help ensure that young people's voices are represented in conversations that shape the future.</p>
+            </div>
+          </div>
+
+          <div class="experience-row">
+            <div class="exp-meta">
+              <div class="exp-date">May 2024 – Present</div>
+              <div class="exp-org">Dear Future Luminary</div>
+            </div>
+            <div class="exp-content">
+              <h3>Founder & Program Director</h3>
+              <p class="exp-desc">Dear Future Luminary began as an idea born from my own journey. Today, it's a growing initiative that helps students discover opportunities, develop their profiles, and navigate their academic journeys with confidence. From mentorship sessions to resource development, every part is designed to make opportunities more accessible.</p>
+            </div>
+          </div>
+
+          <div class="experience-row">
+            <div class="exp-meta">
+              <div class="exp-date">Feb 2024 – Present</div>
+              <div class="exp-org">Kode With Klossy</div>
+            </div>
+            <div class="exp-content">
+              <h3>Project Manager</h3>
+              <p class="exp-desc">At Kode With Klossy, I strengthened both my technical and leadership skills by managing collaborative web-development projects. Working alongside talented students from different backgrounds taught me how to communicate effectively, organize workflows, and transform ideas into functional digital experiences.</p>
+            </div>
+          </div>
+
+          <div class="experience-row">
+            <div class="exp-meta">
+              <div class="exp-date">2024 – Present</div>
+              <div class="exp-org">Mohandes El Math</div>
+            </div>
+            <div class="exp-content">
+              <h3>Head of Operations & Platform Manager</h3>
+              <p class="exp-desc">One of my most hands-on leadership experiences. I helped transform an educational platform from an idea into a fully operational system. My responsibilities range from platform management and student onboarding to customer support systems and team supervision.</p>
+            </div>
+          </div>
+
+          <div class="experience-row">
+            <div class="exp-meta">
+              <div class="exp-date">Feb 2023 – Present</div>
+              <div class="exp-org">New York Academy of Sciences</div>
+            </div>
+            <div class="exp-content">
+              <h3>Project Manager</h3>
+              <p class="exp-desc">Managing international research teams taught me how to coordinate diverse perspectives, organize complex projects, and maintain progress toward shared goals. Working with students from around the world strengthened both my leadership and collaboration skills.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 04_Projects Section ========== -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">Turning Ideas Into Impact</p>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-item">
+            <div class="project-info">
+              <span class="project-meta">Impact Platform</span>
+              <h3>Dear Future Luminary</h3>
+              <p class="project-desc">The project closest to my heart. Dear Future Luminary was created to help students access opportunities that often feel hidden or out of reach. The platform brings together scholarships, STEM clubs, competitions, summer programs, leadership opportunities, and practical resources in one place.</p>
+            </div>
+            <div class="project-visual">
+              <i class="fas fa-lightbulb" style="font-size: 4rem; color: var(--primary);"></i>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-info">
+              <span class="project-meta">Educational Initiative</span>
+              <h3>Mentorship Series</h3>
+              <p class="project-desc">Through a structured mentorship initiative, I delivered sessions helping students understand application strategies, personal branding, extracurricular development, and opportunity discovery. The sessions reached dozens of live participants and hundreds of additional viewers online.</p>
+            </div>
+            <div class="project-visual">
+              <i class="fas fa-users" style="font-size: 4rem; color: var(--primary);"></i>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-info">
+              <span class="project-meta">Web Design & Development</span>
+              <h3>Culture Odyssey</h3>
+              <p class="project-desc">Built during Kode With Klossy, Culture Odyssey explored cultural storytelling through web design and interactive experiences. The project combined creativity, teamwork, and technology while strengthening my front-end development skills.</p>
+            </div>
+            <div class="project-visual">
+              <i class="fas fa-globe" style="font-size: 4rem; color: var(--primary);"></i>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-info">
+              <span class="project-meta">Sustainability & IoT</span>
+              <h3>Crop Growth Control System</h3>
+              <p class="project-desc">Developed through AFS Intercultural Programs, this project focused on sustainability and smart agriculture. The system monitored temperature and soil humidity to automate irrigation processes, helping reduce unnecessary water consumption while improving agricultural efficiency.</p>
+            </div>
+            <div class="project-visual">
+              <i class="fas fa-leaf" style="font-size: 4rem; color: var(--primary);"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 05_Skills Section ========== -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="skills-invention">
+          <h3>Core Competencies</h3>
+          <div class="skills-pills">
+            <div class="skill-pill">Leadership</div>
+            <div class="skill-pill">Project Management</div>
+            <div class="skill-pill">Front-End Development</div>
+            <div class="skill-pill">Research</div>
+            <div class="skill-pill">Problem Solving</div>
+            <div class="skill-pill">Communication</div>
+            <div class="skill-pill">Team Collaboration</div>
+            <div class="skill-pill">Innovation</div>
+            <div class="skill-pill">Mentorship</div>
+            <div class="skill-pill">Social Impact</div>
+            <div class="skill-pill">Technology</div>
+            <div class="skill-pill">Creativity</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 06_Awards Section ========== -->
+    <section id="awards" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Awards</h2>
+          <p class="section-subtitle">Recognition and Achievements</p>
+        </div>
+
+        <div class="awards-grid">
+          <div class="award-item">
+            <div class="award-year">2025</div>
+            <h3>Youth Leadership Award</h3>
+            <p class="award-desc">Recognized for exceptional leadership and community impact through Dear Future Luminary and mentorship initiatives.</p>
+          </div>
+
+          <div class="award-item">
+            <div class="award-year">2024</div>
+            <h3>Innovation in Education</h3>
+            <p class="award-desc">Honored for creating innovative solutions that make educational opportunities more accessible to students globally.</p>
+          </div>
+
+          <div class="award-item">
+            <div class="award-year">2024</div>
+            <h3>Global Collaboration Excellence</h3>
+            <p class="award-desc">Recognized for outstanding collaboration in international research projects with students from 100+ countries.</p>
+          </div>
+
+          <div class="award-item">
+            <div class="award-year">2023</div>
+            <h3>Sustainability Champion</h3>
+            <p class="award-desc">Acknowledged for developing technology solutions that contribute to environmental sustainability and resource conservation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 07_Certifications Section ========== -->
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Certifications</h2>
+          <p class="section-subtitle">Professional Development and Credentials</p>
+        </div>
+
+        <div class="certifications-list">
+          <div class="cert-item">
+            <div class="cert-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="cert-content">
+              <h3>Web Development Fundamentals</h3>
+              <div class="cert-issuer">Kode With Klossy</div>
+              <p class="cert-desc">Comprehensive certification in HTML, CSS, JavaScript, and responsive web design principles.</p>
+            </div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="cert-content">
+              <h3>Project Management Essentials</h3>
+              <div class="cert-issuer">International Organization</div>
+              <p class="cert-desc">Certification in project planning, team coordination, and stakeholder management.</p>
+            </div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div class="cert-content">
+              <h3>Sustainability and Climate Action</h3>
+              <div class="cert-issuer">AFS Intercultural Programs</div>
+              <p class="cert-desc">Certification in sustainable development, environmental conservation, and climate-related solutions.</p>
+            </div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="cert-content">
+              <h3>Youth Leadership and Mentorship</h3>
+              <div class="cert-issuer">Connect Rise</div>
+              <p class="cert-desc">Certification in mentoring, youth development, and community engagement strategies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 08_Leadership Section ========== -->
+    <section id="leadership" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Leadership</h2>
+          <p class="section-subtitle">Leading with Purpose and Passion</p>
+        </div>
+
+        <div class="leadership-timeline">
+          <div class="leadership-item">
+            <div>
+              <div class="leadership-role">Founder & Director</div>
+              <div class="leadership-org">Dear Future Luminary</div>
+            </div>
+            <div>
+              <p class="leadership-desc">Founded an initiative that has impacted hundreds of students globally. Built systems for opportunity discovery, mentorship, and profile development. Demonstrated the ability to turn a personal challenge into a scalable solution.</p>
+            </div>
+          </div>
+
+          <div class="leadership-item">
+            <div>
+              <div class="leadership-role">Head of Operations</div>
+              <div class="leadership-org">Mohandes El Math</div>
+            </div>
+            <div>
+              <p class="leadership-desc">Transformed an educational platform from concept to operational reality. Managed teams, optimized workflows, and ensured quality at scale. Learned that successful platforms are built on strong people and systems.</p>
+            </div>
+          </div>
+
+          <div class="leadership-item">
+            <div>
+              <div class="leadership-role">Project Manager</div>
+              <div class="leadership-org">Multiple Organizations</div>
+            </div>
+            <div>
+              <p class="leadership-desc">Led cross-functional teams in delivering international research projects and web development initiatives. Coordinated diverse perspectives and maintained focus on shared goals. Strengthened communication and collaboration skills.</p>
+            </div>
+          </div>
+
+          <div class="leadership-item">
+            <div>
+              <div class="leadership-role">Mentor & Advocate</div>
+              <div class="leadership-org">Connect Rise & UNICEF</div>
+            </div>
+            <div>
+              <p class="leadership-desc">Guided students through transformative opportunities. Advocated for youth voices in global conversations. Believe that leadership is about making sure everyone's voice is heard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 09_Research Section ========== -->
+    <section id="research" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Research</h2>
+          <p class="section-subtitle">Exploring Global Challenges Through Evidence-Based Problem Solving</p>
+        </div>
+
+        <div class="research-grid">
+          <div class="research-item">
+            <div class="research-focus">Sustainability & Climate</div>
+            <h3>Environmental Solutions</h3>
+            <p class="research-desc">Interdisciplinary research projects focused on sustainability and climate-related challenges. Collaborated with students from over 100 countries to develop evidence-based solutions.</p>
+          </div>
+
+          <div class="research-item">
+            <div class="research-focus">Education & Access</div>
+            <h3>Opportunity Discovery</h3>
+            <p class="research-desc">Research on barriers to educational opportunities and strategies to make STEM programs, scholarships, and international experiences more accessible to underrepresented students.</p>
+          </div>
+
+          <div class="research-item">
+            <div class="research-focus">Technology & Innovation</div>
+            <h3>Smart Agriculture</h3>
+            <p class="research-desc">Explored how IoT and automation can solve real-world problems. Developed systems for environmental monitoring and resource optimization in agricultural settings.</p>
+          </div>
+
+          <div class="research-item">
+            <div class="research-focus">Social Impact</div>
+            <h3>Youth Empowerment</h3>
+            <p class="research-desc">Research on how to empower young people to become leaders and change-makers. Focus on mentorship, skill development, and creating pathways to meaningful opportunities.</p>
+          </div>
+
+          <div class="research-item">
+            <div class="research-focus">Global Collaboration</div>
+            <h3>International Networks</h3>
+            <p class="research-desc">Participated in global research networks and international programs. Deepened understanding of how local challenges connect to global issues and the power of cross-cultural collaboration.</p>
+          </div>
+
+          <div class="research-item">
+            <div class="research-focus">AI & Future Tech</div>
+            <h3>Artificial Intelligence</h3>
+            <p class="research-desc">Exploring how AI can be used responsibly to solve meaningful problems. Interested in applications in education, healthcare, sustainability, and social development.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 11_Why_AI Section ========== -->
+    <section id="why-ai" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why AI</h2>
+          <p class="section-subtitle">People often ask me why I want to study Artificial Intelligence.</p>
+        </div>
+
+        <div class="why-section">
+          <div class="why-content">
+            <h3>Because AI combines everything I love.</h3>
+            <ul class="why-list">
+              <li>Problem-solving</li>
+              <li>Creativity</li>
+              <li>Technology</li>
+              <li>Innovation</li>
+              <li>Impact</li>
+            </ul>
+            <p class="why-text" style="margin-top: 40px;">AI is no longer a technology of the future. It is already shaping healthcare, education, agriculture, sustainability, business, and almost every aspect of our daily lives.</p>
+            <p class="why-text">What excites me most is not just building intelligent systems. It's using those systems to solve meaningful problems—from improving education access to supporting sustainable development and helping communities make better decisions.</p>
+          </div>
+          <div class="why-visual">
+            <h4>I want to be part of that future.</h4>
+            <p>Not only as a learner, but as a builder.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 12_Why_Alamein Section ========== -->
+    <section id="why-alamein" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Alamein</h2>
+          <p class="section-subtitle">When exploring universities, I wasn't only looking for a place to study. I was looking for a place to grow.</p>
+        </div>
+
+        <div class="why-section">
+          <div class="why-content">
+            <h3>A place where I could learn, collaborate, conduct research, join communities, and challenge myself beyond the classroom.</h3>
+            <p class="why-text">Alamein International University stands out because it combines academic excellence with practical learning, innovation, and global exposure.</p>
+            <p class="why-text">What attracts me most is the opportunity to learn in an environment that encourages students to think, create, and take initiative.</p>
+            <p class="why-text">I see university as more than lectures and exams. I see it as a platform for research, leadership, entrepreneurship, community engagement, and lifelong learning.</p>
+            <p class="why-text" style="margin-top: 40px; font-weight: 700;">I believe Alamein International University can help me transform my ideas into impactful projects and prepare me to contribute meaningfully to society.</p>
+          </div>
+          <div class="why-visual">
+            <h4>This is not just a university I want to attend.</h4>
+            <p>It is a community I genuinely want to be part of.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 10_Contact Section ========== -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">If you'd like to learn more about my work or simply connect, I'd be happy to hear from you.</p>
+        </div>
+
+        <div class="contact-wrapper">
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+
+          <div class="contact-info">
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <p>malak@example.com</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h4>Phone</h4>
+                <p>+20 (123) 456-7890</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h4>Location</h4>
+                <p>Egypt</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 style="margin-bottom: 20px; color: var(--dark);">Follow Me</h4>
+              <div class="social-links">
+                <a href="#" class="social-link" title="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-link" title="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" title="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link" title="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Malak Emad. All rights reserved. | Still building. And that's exactly where I want to be.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Custom Cursor
+    const cursor = document.querySelector('.custom-cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.setProperty('--cursor-x', e.clientX + 'px');
+      cursor.style.setProperty('--cursor-y', e.clientY + 'px');
+    });
+
+    document.addEventListener('mouseenter', () => {
+      cursor.style.opacity = '1';
+    });
+
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity = '0';
+    });
+
+    // Hover effect on interactive elements
+    document.querySelectorAll('a, button, input, textarea').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        document.body.classList.add('cursor-hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        document.body.classList.remove('cursor-hover');
+      });
+    });
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Active nav link
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      document.querySelectorAll('section').forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Scroll animation for sections
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Form submission
+    document.querySelector('.contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your message! I will get back to you soon.');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
